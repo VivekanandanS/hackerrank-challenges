@@ -33,7 +33,7 @@ public class TaleofTwoStacks {
         public Type peek(){
             if(stack1.size()==0)
                 return null;
-            return stack1.lastElement()();
+            return stack1.lastElement();
         }
 
     }
