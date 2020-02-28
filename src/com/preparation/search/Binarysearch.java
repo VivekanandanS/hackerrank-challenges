@@ -5,7 +5,7 @@ public class Binarysearch {
 	public static int binarySearch(int arr[], int low, int high, int x) {
 
 		int mid = (high + low) / 2;
-		if (arr[mid] == 3)
+		if (arr[mid] == x)
 			return mid;
 		if (x < arr[mid])
 			return binarySearch(arr, low, mid - 1, x);
