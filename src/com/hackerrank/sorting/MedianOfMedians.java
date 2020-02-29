@@ -46,32 +46,31 @@ public class MedianOfMedians {
 
     public static int medianOfMedians(int[] array, int startIndex, int endIndex, int ithElement) {
 
-            int numberOfElements = endIndex - startIndex + 1;
-            int i;
-            int[] medians = new int[((numberOfElements + 4) / 5)];
-            for (i = 0; i < numberOfElements / 5; i++) {
-                medians[i] = findMedian(array, startIndex + (i * 5), startIndex + (i * 5) + 5);
-            }
+        int numberOfElements = endIndex - startIndex + 1;
+        int i;
+        int[] medians = new int[((numberOfElements + 4) / 5)];
+        for (i = 0; i < numberOfElements / 5; i++) {
+            medians[i] = findMedian(array, startIndex + (i * 5), startIndex + (i * 5) + 5);
+        }
 
-            if (numberOfElements % 5 > 0) {
-                medians[i] =
-                        findMedian(array, startIndex + i * 5, startIndex + (i * 5) + (numberOfElements % 5));
-                i++;
-            }
-            int medianOfMedians = medians.length == 1 ? medians[0] : medianOfMedians(medians, 0, medians.length - 1, medians.length / 2);
-            int indexOfMoM = partition(array, startIndex, endIndex, medianOfMedians);
+        if (numberOfElements % 5 > 0) {
+            medians[i] =
+                    findMedian(array, startIndex + i * 5, startIndex + (i * 5) + (numberOfElements % 5));
+            i++;
+        }
+        int medianOfMedians = medians.length == 1 ? medians[0] : medianOfMedians(medians, 0, medians.length - 1, medians.length / 2);
+        int indexOfMoM = partition(array, startIndex, endIndex, medianOfMedians);
+        if (indexOfMoM  == ithElement)
+            return array[indexOfMoM];
 
-            if (indexOfMoM == ithElement)
-                return array[indexOfMoM];
-
-            if (indexOfMoM > ithElement)
-                return medianOfMedians(array, startIndex, indexOfMoM - 1, ithElement);
-            return medianOfMedians(array, indexOfMoM , endIndex, ithElement);
+        if (indexOfMoM > ithElement)
+            return medianOfMedians(array, startIndex, indexOfMoM - 1, ithElement);
+        return medianOfMedians(array, indexOfMoM, endIndex, ithElement);
 
     }
 
     public static void main(String[] args) {
-        int[] arr = {0,1,2,3,4,5,6,7,8,9,10};
-        System.out.println(medianOfMedians(arr, 0, arr.length - 1, arr.length/2));
+        int[] arr = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        System.out.println(medianOfMedians(arr, 0, arr.length - 1, 0));
     }
 }
