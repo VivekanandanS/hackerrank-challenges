@@ -1,4 +1,4 @@
-package com.hackerrank.linkedlist;
+package com.hackerrank.tree;
 
 public class InOrderTraversal {
 
