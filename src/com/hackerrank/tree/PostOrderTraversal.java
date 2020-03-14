@@ -6,12 +6,6 @@ package com.hackerrank.tree;
  */
 public class PostOrderTraversal {
 
-    class Node {
-        int data;
-        Node left;
-        Node right;
-    }
-
     public static void postOrder(Node root) {
 
         if(null == root)

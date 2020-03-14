@@ -1,19 +1,7 @@
 package com.hackerrank.tree;
 
 
-class Node<T> {
-    Node left;
-    Node right;
-    T data;
-
-    Node(T data) {
-        this.data = data;
-        left = null;
-        right = null;
-    }
-}
-
-class Solution {
+public class HeightOfBinaryTree {
 
     public static int height(Node root) {
         if (null == root)

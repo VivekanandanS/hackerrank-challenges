@@ -25,10 +25,7 @@ public class VerticalOrder {
             right = null;
         }
 
-        @Override
-        public String toString() {
-            return data + "";
-        }
+
     }
 
 
