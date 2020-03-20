@@ -13,19 +13,17 @@ public class Node {
 
 
     public static Node insert(Node root, int data) {
-        if (root == null) {
+        if (root == null)
             return new Node(data);
+        Node cursor;
+        if (data <= root.data) {
+            cursor = insert(root.left, data);
+            root.left = cursor;
         } else {
-            Node cur;
-            if (data <= root.data) {
-                cur = insert(root.left, data);
-                root.left = cur;
-            } else {
-                cur = insert(root.right, data);
-                root.right = cur;
-            }
-            return root;
+            cursor = insert(root.right, data);
+            root.right = cursor;
         }
+        return root;
     }
 
     @Override

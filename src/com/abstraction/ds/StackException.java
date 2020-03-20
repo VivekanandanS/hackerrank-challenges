@@ -1,4 +1,4 @@
-package com.freshworks.ds;
+package com.abstraction.ds;
 
 public abstract class StackException extends Exception {
 
