@@ -13,7 +13,6 @@ public class MinimumSwaps {
 			arr[indexJ]=temp;
 			i--;
 			SWAPS++;
-			
 		}
 		return SWAPS;
 	}
@@ -21,9 +20,9 @@ public class MinimumSwaps {
 	public static void main(String[] args) {
 		// 00
 		int[] array;
-		array = new int[] { 4, 3, 1, 2 };
+//		array = new int[] { 4, 3, 1, 2 };
 //		array = new int[] { 2, 3, 4, 1, 5 };
-//		array = new int[] { 1, 3, 5, 2, 4, 6, 7 };
+		array = new int[] { 8, 3, 5, 2, 4, 6, 7, 1};
 		System.out.println(minimumSwaps(array));
 
 	}

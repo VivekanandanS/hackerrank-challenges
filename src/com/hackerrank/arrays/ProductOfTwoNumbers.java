@@ -33,7 +33,8 @@ public class ProductOfTwoNumbers {
 
 	public static void main(String[] args) {
 		int[] arr = { 1, 12, 5, 4, 13, -12, -14 };
-		System.out.println(12 * 13);
+		arr = new int[]{-1, -12, -5, -4, -13, -12, -14};
+//		System.out.println(12 * 13);
 		System.out.println(maximumProduct(arr));
 	}
 
